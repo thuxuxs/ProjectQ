@@ -254,3 +254,11 @@ class Qureg(list):
         """
         for qb in self:
             qb.engine = eng
+
+
+if __name__ == "__main__":
+    bq1 = BasicQubit(None, 2)
+    bq2 = BasicQubit(None, 3)
+    qr = Qureg([bq1, bq2, bq1, bq1, bq2])
+    print(qr)
+    print(Qureg(qr))
