@@ -315,3 +315,13 @@ class Command(object):
             qstring = qstring[:-2] + " )"
         cstring = "C" * len(ctrlqubits)
         return cstring + str(self.gate) + " | " + qstring
+
+
+if __name__ == "__main__":
+    from projectq.types import Qubit
+    from projectq.ops import HGate
+    from projectq import MainEngine
+    eng = MainEngine()
+    q = ([Qubit(eng, 0), Qubit(eng, 1)],)
+    c = Command(eng, HGate, q)
+    print(c)
